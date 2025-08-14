@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCar | O carro dos seus sonhos está aqui</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container">
+        <a href="/" class="navbar-logo">AutoCar</a>
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="#carrossel">Início</a></li>
+                <li><a href="#estoque">Estoque</a></li>
+                <li><a href="#sobre-nos">Sobre Nós</a></li>
+                <li>
+                    <a href="#" class="btn-vendedor">Falar com Vendedor</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section id="carrossel" class="carrossel-section">
+        <div class="carrossel-container">
+            <div class="carrossel-slide active">
+                <img src="imagens/carrossel1.jpg" alt="Carro esportivo de luxo em uma estrada na montanha">
+            </div>
+            <div class="carrossel-slide">
+                <img src="imagens/carrossel2.jpg" alt="Interior de um carro moderno com painel digital">
+            </div>
+            <div class="carrossel-slide">
+                <img src="imagens/carrossel3.jpg" alt="SUV branco trafegando em uma cidade à noite">
+            </div>
+            <div class="carrossel-slide">
+                <img src="imagens/carrossel4.jpg" alt="Detalhe da roda e farol de um carro superesportivo vermelho">
+            </div>
+            <div class="carrossel-slide">
+                <img src="imagens/carrossel5.jpg" alt="Picape robusta em uma trilha de terra">
+            </div>
+
+            <button class="carrossel-prev" aria-label="Slide Anterior">&#10094;</button>
+            <button class="carrossel-next" aria-label="Próximo Slide">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="estoque" class="estoque-section">
+        <div class="estoque-container">
+
+            <h2 class="section-title hidden">Encontre o Veículo dos Seus Sonhos</h2>
+            <div class="busca-rapida hidden">
+                <div class="input-busca">
+                    <label for="buscaModelo" class="sr-only">Digite o Modelo do Veículo</label>
+                    <input id="buscaModelo" type="text" placeholder="Digite o Modelo do Veículo">
+                    <button>Buscar</button>
+                </div>
+            </div>
+
+            <h2 class="section-title hidden">Destaques que Aceleram Corações</h2>
+            <div class="cards-container hidden">
+                <div class="card-carro">
+                    <img src="imagens/VolkswagenNivus.jpg" alt="Volkswagen Nivus branco, vista frontal">
+                    <div class="card-info">
+                        <h3>VOLKSWAGEN NIVUS</h3>
+                        <p>1.0 TSI 200 FLEX AUTOMÁTICO</p>
+                        <span class="preco">R$ 139.900 | 2024</span>
+                        <p>Aut. | Flex | 0 KM</p>
+                    </div>
+                </div>
+
+                <div class="card-carro">
+                    <img src="imagens/FiatEstrada.webp" alt="Fiat Estrada prata, cabine dupla">
+                    <div class="card-info">
+                        <h3>FIAT ESTRADA</h3>
+                        <p>1.4 4P FLEX</p>
+                        <span class="preco">R$ 74.900 | 2022</span>
+                        <p>Man. | Flex | 0 KM</p>
+                        <p>Limeira</p>
+                    </div>
+                </div>
+
+                <div class="card-carro">
+                    <img src="imagens/ChevroletOnix.webp" alt="Chevrolet Onix vermelho metálico">
+                    <div class="card-info">
+                        <h3>CHEVROLET ONIX</h3>
+                        <p>1.0 4P FLEX</p>
+                        <span class="preco">R$ 39.900 | 2014</span>
+                        <p>Man. | Flex | 166.000 KM</p>
+                        <p>Cerquilho</p>
+                    </div>
+                </div>
+
+                <div class="card-carro">
+                    <img src="imagens/FordRanger.jpg" alt="Ford Ranger preta, modelo esportivo">
+                    <div class="card-info">
+                        <h3>FORD RANGER</h3>
+                        <p>2.0 16V 4P TURBO DIESEL</p>
+                        <span class="preco">R$ 279.900 | 2024</span>
+                        <p>Aut. | Diesel</p>
+                        <p>Mogi-mirim</p>
+                    </div>
+                </div>
+
+                <div class="card-carro">
+                    <img src="imagens/JeepCompass.jpg" alt="Jeep Compass cinza chumbo em estúdio">
+                    <div class="card-info">
+                        <h3>JEEP COMPASS</h3>
+                        <p>2.0 16V 4P FLEX</p>
+                        <span class="preco">R$ 139.900 | 2024</span>
+                        <p>Aut. | Flex | 0 KM</p>
+                        <p>Lencois Paulista</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-nos">
+        <div class="estoque-container">
+            <div class="sobre-nos-container hidden">
+                <div class="sobre-nos-imagem">
+                    <img src="imagens/equipe.avif" alt="Nossa equipe AutoCar reunida em frente à loja">
+                </div>
+                <div class="sobre-nos-texto">
+                    <h2>Mais que uma Loja, uma Paixão por Carros</h2>
+                    <p>
+                        Na AutoCar, não vendemos apenas veículos, realizamos sonhos. Nascemos da paixão por motores e do desejo de conectar pessoas aos carros que elas amam. Cada veículo em nosso estoque é selecionado com um rigoroso padrão de qualidade, garantindo segurança e a melhor experiência para você e sua família.
+                    </p>
+                    <p>
+                        Nossa missão é oferecer transparência, confiança e um atendimento que faça você se sentir em casa. Venha nos visitar e descubra por que somos a sua melhor escolha.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="rodape" class="rodape">
+    <h2 class="section-title hidden">As Melhores Marcas em um Só Lugar</h2>
+    <div class="links-marcas hidden">
+        <ul>
+            <li><a href="#">Ferrari</a></li>
+            <li><a href="#">Lamborghini</a></li>
+            <li><a href="#">Porsche</a></li>
+            <li><a href="#">Bugatti</a></li>
+            <li><a href="#">McLaren</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Mercedes-Benz</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">Audi</a></li>
+            <li><a href="#">Jaguar</a></li>
+            <li><a href="#">Land Rover</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Ford</a></li>
+            <li><a href="#">Chevrolet</a></li>
+            <li><a href="#">Toyota</a></li>
+            <li><a href="#">Honda</a></li>
+            <li><a href="#">Nissan</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Volvo</a></li>
+            <li><a href="#">Peugeot</a></li>
+            <li><a href="#">Renault</a></li>
+            <li><a href="#">Maserati</a></li>
+            <li><a href="#">Hyundai</a></li>
+        </ul>
+    </div>
+
+    <div class="newsletter hidden">
+        <label for="newsletterEmail" class="sr-only">Receba informativos via e-mail</label>
+        <input id="newsletterEmail" type="email" placeholder="Receba informativos via e-mail">
+        <button>Cadastrar</button>
+    </div>
+
+    <div class="aviso hidden">
+        <p>ATENÇÃO: O site não se responsabiliza pelos anúncios constantes de seu site, que são de responsabilidade exclusiva de cada anunciante. Cabe ao consumidor assegurar-se de que o negócio é idôneo antes de realizar qualquer transação. O site não realiza intermediação das vendas e compras, trocas ou qualquer tipo de transação feita pelos usuários de seu site, tratando-se de serviço exclusivamente de disponibilização de mídia para divulgação. A transação é feita diretamente entre as partes interessadas. Fotos ilustrativas. Os preços podem sofrer alterações sem prévio aviso.</p>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2025 - <strong>AutoCar</strong> | Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<button id="btnTopo">^</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

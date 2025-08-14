@@ -1,0 +1,402 @@
+/* --- CONFIGURAÇÕES GLOBAIS --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 70px;
+    background-color: #f4f4f4;
+    /* MELHORIA VISUAL: Definindo fontes base para o projeto */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* MELHORIA VISUAL: Títulos com fonte de destaque */
+h1, h2, h3, .navbar-logo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MELHORIA ACESSIBILIDADE: Classe para esconder labels visualmente */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+/* --- ANIMAÇÃO DE SURGIMENTO --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: #222;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* MELHORIA VISUAL: Sombra para dar profundidade */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px;
+    transition: color 0.3s;
+}
+.navbar-links a:hover {
+    color: #ff6600;
+}
+.btn-vendedor {
+    background-color: #ff6600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white !important; /* Força a cor branca para sobrepor o hover */
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-vendedor:hover {
+    background-color: #e65c00;
+}
+
+
+/* --- CARROSSEL --- */
+.carrossel-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+.carrossel-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+}
+.carrossel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carrossel-slide.active {
+    display: block;
+    opacity: 1;
+}
+.carrossel-prev,
+.carrossel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+.carrossel-prev:hover,
+.carrossel-next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.carrossel-prev { left: 15px; }
+.carrossel-next { right: 15px; }
+
+
+/* --- CONTEÚDO PRINCIPAL E CARDS --- */
+.estoque-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+.busca-rapida {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto 40px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.input-busca {
+    display: flex;
+    gap: 10px;
+}
+.input-busca input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+.input-busca button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    /* MELHORIA VISUAL: Cor do botão unificada */
+    background: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+.input-busca button:hover {
+    background: #e65c00;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+.card-carro {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-carro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+.card-carro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card-info {
+    padding: 15px;
+    font-size: 0.9rem;
+}
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #222;
+}
+.card-info p {
+    margin: 4px 0;
+    color: #555;
+}
+.preco {
+    font-weight: bold;
+    color: #333; /* ALTERAÇÃO VISUAL: Cor menos agressiva para o preço */
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* --- SEÇÃO SOBRE NÓS --- */
+#sobre-nos {
+    background-color: #f4f4f4; /* Garante que a cor de fundo continue */
+}
+.sobre-nos-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.sobre-nos-imagem {
+    flex: 1;
+    max-width: 450px;
+}
+.sobre-nos-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.sobre-nos-texto {
+    flex: 1.2;
+}
+.sobre-nos-texto h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.sobre-nos-texto p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+/* --- RODAPÉ --- */
+.rodape {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+.rodape .section-title {
+    color: #fff;
+    margin-bottom: 40px;
+}
+.links-marcas {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+/* ALTERAÇÃO ESTRUTURAL: Estilizando a nova estrutura de lista */
+.links-marcas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.links-marcas a {
+    text-decoration: none;
+    margin: 8px 0;
+    font-size: 18px; /* Ajuste de tamanho */
+    font-weight: 400;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: block;
+}
+.links-marcas a:hover {
+    color: #ff6600;
+}
+.newsletter {
+    margin: 40px 0;
+}
+.newsletter input {
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    width: 300px;
+    font-size: 1rem;
+}
+.newsletter button {
+    padding: 12px 25px;
+    /* MELHORIA VISUAL: Cor do botão unificada */
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+.newsletter button:hover {
+    background-color: #e65c00;
+}
+.aviso {
+    font-size: 14px;
+    color: #aaa;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    line-height: 1.6;
+}
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* --- BOTÃO VOLTAR AO TOPO --- */
+#btnTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* MELHORIA VISUAL: Cor do botão unificada */
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#btnTopo:hover {
+    background-color: #e65c00;
+    transform: scale(1.1);
+}
+
+
+/* --- AJUSTES DE RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .sobre-nos-container {
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+        text-align: center;
+    }
+    .links-marcas {
+        gap: 20px;
+        justify-content: space-around;
+    }
+    .links-marcas ul {
+        width: 40%; /* Faz com que as colunas se ajustem melhor */
+    }
+    .newsletter input {
+        width: calc(100% - 120px); /* Ajusta o input para caber com o botão */
+    }
+}
